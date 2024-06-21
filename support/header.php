@@ -17,10 +17,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <style>
-	/*body {
-		background: #fff;
-		font-family: Georgia;
-	}*/
+
 	body {
 	  font-family: 'Poppins', sans-serif;
 	  align-items: center;

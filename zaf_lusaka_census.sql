@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2022 at 11:23 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Jun 22, 2024 at 12:15 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,7 @@ CREATE TABLE `children_and_dependants` (
   `level_of_education` text DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `children_and_dependants`
@@ -74,7 +74,7 @@ CREATE TABLE `civilian_personnel` (
   `spouse_employer` text NOT NULL,
   `quarter_number` text NOT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE `civilian_residents` (
   `spouse_employer` text NOT NULL,
   `quarter_number` text NOT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `civilian_residents`
@@ -126,7 +126,7 @@ CREATE TABLE `login_table` (
   `user_ip` text NOT NULL,
   `user_country` text DEFAULT NULL,
   `logout_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login_table`
@@ -157,7 +157,7 @@ CREATE TABLE `motor_vehicles` (
   `color` text NOT NULL,
   `remarks` text NOT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `motor_vehicles`
@@ -183,7 +183,7 @@ CREATE TABLE `private_employees` (
   `address` text NOT NULL,
   `employee_type` text NOT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `private_employees`
@@ -220,7 +220,7 @@ CREATE TABLE `service_personnel` (
   `spouse_employer` text NOT NULL,
   `quarter_number` text NOT NULL,
   `parent_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `service_personnel`
@@ -244,7 +244,7 @@ CREATE TABLE `users` (
   `unit` text NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `active` enum('0','1') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -252,7 +252,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `service_number`, `user_type`, `password`, `user_name`, `unit`, `parent_id`, `active`) VALUES
 (1, '938126', 'super_admin', '$2y$10$J9RysAYw6ys/kwcVlvthzub3LvdBfofsxIdyehCptd9E8GhLXZWgC', 'Enock Chanda', 'SSMU', 1, '1'),
-(2, '938474', 'super_admin', '$2y$10$FuuawfJgcy2nvFVBwPQfsOb09cxYZt2Vpq8cCaemc9n.S03rtCmcK', 'Mutale Mulenga', 'ZAF Lusaka', 2, '1');
+(2, '938474', 'super_admin', '$2y$10$FuuawfJgcy2nvFVBwPQfsOb09cxYZt2Vpq8cCaemc9n.S03rtCmcK', 'Mutale Mulenga', 'ZAF Lusaka', 2, '1'),
+(3, '938390', 'super_admin', '$2y$10$MF69b7aNzsZqpdaJRCknUuHv.eQxYo779bOD5O0I8j6PF.wA9pkRW', 'Harrison Banda', 'MT EUG', 3, '1');
 
 --
 -- Indexes for dumped tables
@@ -356,7 +357,7 @@ ALTER TABLE `service_personnel`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
